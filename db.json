@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Television",
+      "price": 699.99,
+      "description": "Latest model with OLED display"
+    },
+    {
+      "id": "2",
+      "name": "Smartphone",
+      "price": 699.99,
+      "description": "Latest model with OLED display"
+    },
+    {
+      "id": "3",
+      "name": "Headphones",
+      "price": 149.99,
+      "description": "Noise-cancelling wireless headphones"
+    },
+    {
+      "id": "27d3",
+      "name": "Iphone",
+      "price": 5000000,
+      "description": "  cdhbewuyvwh\n"
+    }
+  ]
+}

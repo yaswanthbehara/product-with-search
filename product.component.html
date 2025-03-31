@@ -1,0 +1,38 @@
+<div class="product-management">
+  <h2>Product Management</h2>
+
+  <input type="text" [(ngModel)]="searchQuery" (input)="searchProducts()" placeholder=" Search products..." />
+
+  <div class="add-product-form">
+    <h3>Add New Product</h3>
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" [(ngModel)]="newProduct.name" placeholder="Product name">
+    </div>
+    <div class="form-group">
+      <label>Price:</label>
+      <input type="number" [(ngModel)]="newProduct.price" placeholder="Price">
+    </div>
+    <div class="form-group">
+      <label>Description:</label>
+      <textarea [(ngModel)]="newProduct.description" placeholder="Description"></textarea>
+    </div>
+    <button (click)="addProduct()" [disabled]="isLoading">Add Product</button>
+  </div>
+
+  <div class="products-list">
+    <h3 style="text-align: center;">Product List</h3>
+    <p *ngIf="filteredProducts.length === 0 && !isLoading">No products found</p>
+    <br><br>
+
+    <div *ngFor="let product of filteredProducts; trackBy: trackById" class="product-card">
+      <h4>{{ product.name }}</h4>
+      <p class="price">${{ product.price | number:'1.2-2' }}</p>
+      <p class="description">{{ product.description }}</p>
+      <div class="product-actions">
+        <button (click)="editProduct(product)">Edit</button>
+        <button (click)="deleteProduct(product.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
